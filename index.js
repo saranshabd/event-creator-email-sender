@@ -2,6 +2,7 @@
 
 const express = require('express')
 const bodyParser = require('body-parser')
+const cors = require('cors')
 const nodemailer = require('nodemailer')
 const fs = require('fs')
 
@@ -13,6 +14,9 @@ const app = express()
 // use body-parser middleware
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
+
+// use CORS middleware
+app.use(cors())
 
 /**
  * utility method to check if there are any empty strings
